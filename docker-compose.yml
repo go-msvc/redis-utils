@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    redis:
+        image: redis
+        hostname: redis
+        restart: unless-stopped
+        environment:
+            - TZ=${TIMEZONE}
+        ports:
+            - "6379:6379"
+        networks:
+            - redis
+############
+# NETWORKS #
+############
+networks:
+    redis:
